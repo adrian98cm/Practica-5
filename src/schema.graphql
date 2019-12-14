@@ -1,0 +1,34 @@
+
+    type Query{
+        test: String
+    }
+
+    type Mutation{
+        addEquipo(name: String!):Equipo!
+        addPartido(local: String!, visitante: String!, fecha: String!,resultado:String!,estadopartido:Int!):Partido!
+        updateResultado(idpartido: ID!,nuevoresultado: String!):Partido!
+        iniciarPartido(idpartido: ID!):Partido!
+        finalizarPartido(idpartido: ID!):Partido!
+
+
+    }
+
+    type Suscription{
+        notificarPartido(id:ID!):Partido!
+        notificarEquipo(id:ID!:Partido!
+
+    }
+
+    type Equipo{
+        name: String!
+        _id: ID!
+    }
+
+    type Partido{
+        equipolocal: Equipo!
+        equipovisitante: Equipo!
+        fecha: String!
+        resultado: String!
+        estadopartido: Int!
+        _id: ID!
+    }
